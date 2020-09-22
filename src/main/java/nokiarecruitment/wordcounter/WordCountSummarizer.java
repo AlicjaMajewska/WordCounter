@@ -67,7 +67,6 @@ class WordCountSummarizer {
                 .append(getWyrazyWordFormDependingOnCount(wordCountInFile.getWordCount()))
                 .append(" ")
                 .append(searchedWord);
-
     }
 
     private String getWyrazyWordFormDependingOnCount(long wordCount) {
