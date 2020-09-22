@@ -14,6 +14,9 @@ public class WordCounter {
     private final FilesLister filesLister;
 
     public void countWordInDirectoryOf(String path, String searchedWord) {
+        if (searchedWord.isBlank()) {
+            throw new IllegalArgumentException("Searched word cannot be blank");
+        }
         Collection<File> files = filesLister.listTextFilesRecursivelyFrom(path);
         List<WordCountInFile> wordCountsInFiles = files.stream()
                 .map(it -> wordInFileCounter.countWordOccurrenceIn(it, searchedWord))

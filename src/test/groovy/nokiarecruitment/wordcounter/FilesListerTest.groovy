@@ -16,7 +16,7 @@ class FilesListerTest extends Specification {
         filesLister.listTextFilesRecursivelyFrom(directory)
 
         then:
-        def e = thrown(RuntimeException)
+        def e = thrown(IllegalArgumentException)
         e.message == "Given directory does not exist"
     }
 
@@ -28,7 +28,7 @@ class FilesListerTest extends Specification {
         filesLister.listTextFilesRecursivelyFrom(directory)
 
         then:
-        def e = thrown(RuntimeException)
+        def e = thrown(IllegalArgumentException)
         e.message == "Given path is not a directory"
     }
 

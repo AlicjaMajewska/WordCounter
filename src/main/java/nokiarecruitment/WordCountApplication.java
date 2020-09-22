@@ -8,7 +8,7 @@ import java.io.File;
 public class WordCountApplication {
 
     public static void main(String[] args) {
-        if (args.length != 2 || !isPathDirectory(args[0])) {
+        if (args.length != 2 || !isPathDirectory(args[0]) || args[1].isBlank()) {
             System.out.println("Provide absolute path to directory and the searched word");
             System.exit(1);
         }
